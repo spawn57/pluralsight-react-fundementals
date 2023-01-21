@@ -36,6 +36,7 @@ const HouseList = () => {
 
     return (
         <>
+            {counter}
             <div className="row mb-2">
                 <h5 className="themeFontColor text-center">
                     Houses currently on the market
