@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import HouseRow from "./houseRow";
 
-const houses = [
+const housesArray = [
     {
         id: 1,
         address: "12 Valley of Kings, Geneva",
@@ -17,6 +17,7 @@ const houses = [
 ]
 
 const HouseList = () => {
+    const [houses, setHouses] = useState(houseArray);
     return (
         <>
             <div className="row mb-2">
@@ -37,7 +38,7 @@ const HouseList = () => {
                 </tbody>
             </table>
         </>
-    )
+    );
 };
 
 export default HouseList;
