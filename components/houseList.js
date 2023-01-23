@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HouseRow from "./houseRow";
 
-const houseArray = [
-    {}
-]
-
 const HouseList = () => {
-    const [houses, setHouses] = useState(houseArray);
+    const [houses, setHouses] = useState([]);
 
     useEffect(() => {
         const fetchHouses = async () => {
@@ -15,13 +11,13 @@ const HouseList = () => {
             setHouses(houses);
         }
         fetchHouses();
-    });
+    }, []);
 
     const addHouse = () => {
         setHouses([
             ...houses,
             {
-                id: 3,
+                id: 7,
                 address: "32 Valley Way, New York",
                 country: "USA",
                 price: 1000000,
