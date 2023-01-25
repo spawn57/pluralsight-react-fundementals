@@ -10,9 +10,10 @@ const App = () => {
 
         // do checks on house
         // ...
-        
+
         setSelectedHouse(house);
     }
+    
     return (
         <>
             <Banner>

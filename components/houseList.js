@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
+import useHouses from "@/hooks/useHouses";
 import HouseRow from "./houseRow";
 
 const HouseList = ({setSelectedHouse}) => {
-    const [houses, setHouses] = useState([]);
-
-    useEffect(() => {
-        const fetchHouses = async () => {
-            const response = await fetch("/api/houses");
-            const houses = await response.json();
-            setHouses(houses);
-        }
-        fetchHouses();
-    }, []);
+   const { houses, setHouses } = useHouses();
 
     const addHouse = () => {
         setHouses([
