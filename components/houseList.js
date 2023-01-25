@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HouseRow from "./houseRow";
 
-const HouseList = () => {
+const HouseList = ({setSelectedHouse}) => {
     const [houses, setHouses] = useState([]);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const HouseList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {houses.map(h => <HouseRow key={h.id} house={h}></HouseRow>)}
+                    {houses.map(h => <HouseRow key={h.id} house={h} setSelectedHouse={setSelectedHouse}></HouseRow>)}
                 </tbody>
             </table>
             <button className="btn btn-primary" onClick={addHouse}>
