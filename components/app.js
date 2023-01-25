@@ -5,6 +5,14 @@ import Banner from "./banner";
 
 const App = () => {
     const [selectedHouse, setSelectedHouse] = useState();
+
+    const setSelectedHouseWrapper = (house) => {
+
+        // do checks on house
+        // ...
+        
+        setSelectedHouse(house);
+    }
     return (
         <>
             <Banner>
@@ -13,7 +21,7 @@ const App = () => {
             {selectedHouse ? ( 
                 <House house={selectedHouse} />
             ): (
-                <HouseList setSelectedHouse={setSelectedHouse} />
+                <HouseList setSelectedHouse={setSelectedHouseWrapper} />
             )}
         </>
     );
