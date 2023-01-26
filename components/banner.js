@@ -1,4 +1,7 @@
-import styles from "./banner.module.css"
+import { useContext } from "react";
+import navValues from "@/helpers/navValues";
+import styles from "./banner.module.css";
+import { navigationContext } from "./app";
 
 const subtitleStyle = {
     fontStyle: "italic",
@@ -7,10 +10,17 @@ const subtitleStyle = {
 };
 
 const Banner = ({children}) => {
+    const { navigate } = useContext(navigationContext);
+
     return (
         <header className="row mb-4">
             <div className="col-5">
-                <img src="./GloboLogo.png" alt="logo" className={styles.logo}/>
+                <img 
+                    src="./GloboLogo.png" 
+                    alt="logo" 
+                    className={styles.logo}
+                    onClick={() => navigate(navValues.home)}
+                />
             </div>
             <div className="col-7 mt-5" style={subtitleStyle}>
                 {children}
