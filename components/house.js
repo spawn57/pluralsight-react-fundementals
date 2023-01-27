@@ -2,6 +2,7 @@ import currencyFormatter from "@/helpers/currencyFormatter";
 import defaultPhoto from "@/helpers/defaultPhoto";
 import { navigationContext } from "./app";
 import { useContext } from "react";
+import Bids from './bids';
 
 const House = () => {
     const { param: house } = useContext(navigationContext);
@@ -34,6 +35,7 @@ const House = () => {
                     <div className="col-12-mt-3">{house.description}</div>
                 </div>
             </div>
+            <Bids house={house} />
         </div>
     );
 };
