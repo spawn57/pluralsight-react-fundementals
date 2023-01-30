@@ -1,22 +1,18 @@
-import loadingStatus from "@/helpers/loadingStatus";
-import useHouses from "@/hooks/useHouses";
-import HouseRow from "./houseRow";
-import LoadingIndicator from "./loadingIndicator";
+
+import useHouses from '@/hooks/useHouses';
+import HouseRow from './houseRow';
+
 
 const HouseList = () => {
     const { houses, setHouses, loadingState } = useHouses();
-
-    if (loadingState !== loadingStatus.loaded) {
-        return <LoadingIndicator loadingState={loadingState} />
-    }
 
     const addHouse = () => {
         setHouses([
             ...houses,
             {
                 id: 7,
-                address: "32 Valley Way, New York",
-                country: "USA",
+                address: '32 Valley Way, New York',
+                country: 'USA',
                 price: 1000000,
             },
         ]);

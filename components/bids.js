@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useBids from '@/hooks/useBids';
-import loadingStatus from "@/helpers/loadingStatus";
-import LoadingIndicator from "./loadingIndicator";
+import loadingStatus from '@/helpers/loadingStatus';
+import LoadingIndicator from './loadingIndicator';
 import currencyFormatter from '@/helpers/currencyFormatter';
 
 const Bids = ({ house }) => {
