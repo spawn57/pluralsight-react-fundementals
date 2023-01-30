@@ -1,24 +1,6 @@
-import { useState } from 'react';
-import useBids from '@/hooks/useBids';
-import loadingStatus from '@/helpers/loadingStatus';
-import LoadingIndicator from './loadingIndicator';
 import currencyFormatter from '@/helpers/currencyFormatter';
 
-const Bids = ({ house }) => {
-    const { bids, loadingState } = useBids(house.id);
-
-    const emptyBid = {
-        houseId: house.id,
-        bidder: '',
-        amount: 0,
-    };
-
-    const [newBid, setNewBid] = useState(emptyBid);
-
-    if (loadingState != loadingStatus.loaded) {
-        return <LoadingIndicator loadingState={loadingState} />
-    }
-
+const BidList = ({ bids }) => {
     return (
         <>
             <div className="row mt-4">
@@ -45,4 +27,5 @@ const Bids = ({ house }) => {
     );
 };
 
-export default Bids;
+export default BidList
+;
